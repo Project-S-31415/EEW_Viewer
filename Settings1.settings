@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EEW_Viewer" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="color_none" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">0, 0, 50</Value>
+    </Setting>
+    <Setting Name="color_yohou" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">Lime</Value>
+    </Setting>
+    <Setting Name="color_keihou" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">Red</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
