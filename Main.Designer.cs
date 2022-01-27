@@ -34,9 +34,8 @@
             this.M_Depth = new System.Windows.Forms.Label();
             this.Loading = new System.Windows.Forms.Label();
             this.sindo = new System.Windows.Forms.Label();
-            this.YohouKeihou_Hou_Time = new System.Windows.Forms.Label();
+            this.YohouKeihou_Hou_Final_Time = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Label();
-            this.Final = new System.Windows.Forms.Label();
             this.JsonTimer = new System.Windows.Forms.Timer(this.components);
             this.Version = new System.Windows.Forms.Label();
             this.Tunami = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@
             this.Singen.Name = "Singen";
             this.Singen.Size = new System.Drawing.Size(0, 41);
             this.Singen.TabIndex = 1;
-            this.Singen.UseWaitCursor = true;
             // 
             // SAIDAISINDO
             // 
@@ -64,7 +62,6 @@
             this.SAIDAISINDO.Name = "SAIDAISINDO";
             this.SAIDAISINDO.Size = new System.Drawing.Size(0, 20);
             this.SAIDAISINDO.TabIndex = 2;
-            this.SAIDAISINDO.UseWaitCursor = true;
             // 
             // M_Depth
             // 
@@ -75,7 +72,6 @@
             this.M_Depth.Name = "M_Depth";
             this.M_Depth.Size = new System.Drawing.Size(0, 30);
             this.M_Depth.TabIndex = 3;
-            this.M_Depth.UseWaitCursor = true;
             // 
             // Loading
             // 
@@ -89,7 +85,6 @@
             this.Loading.Size = new System.Drawing.Size(210, 35);
             this.Loading.TabIndex = 4;
             this.Loading.Text = "Now Loading...";
-            this.Loading.UseWaitCursor = true;
             // 
             // sindo
             // 
@@ -103,19 +98,17 @@
             this.sindo.TabIndex = 5;
             this.sindo.Tag = "Shido";
             this.sindo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.sindo.UseWaitCursor = true;
             // 
-            // YohouKeihou_Hou_Time
+            // YohouKeihou_Hou_Final_Time
             // 
-            this.YohouKeihou_Hou_Time.AutoSize = true;
-            this.YohouKeihou_Hou_Time.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YohouKeihou_Hou_Time.ForeColor = System.Drawing.Color.GhostWhite;
-            this.YohouKeihou_Hou_Time.Location = new System.Drawing.Point(0, 0);
-            this.YohouKeihou_Hou_Time.Margin = new System.Windows.Forms.Padding(0);
-            this.YohouKeihou_Hou_Time.Name = "YohouKeihou_Hou_Time";
-            this.YohouKeihou_Hou_Time.Size = new System.Drawing.Size(0, 18);
-            this.YohouKeihou_Hou_Time.TabIndex = 6;
-            this.YohouKeihou_Hou_Time.UseWaitCursor = true;
+            this.YohouKeihou_Hou_Final_Time.AutoSize = true;
+            this.YohouKeihou_Hou_Final_Time.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YohouKeihou_Hou_Final_Time.ForeColor = System.Drawing.Color.GhostWhite;
+            this.YohouKeihou_Hou_Final_Time.Location = new System.Drawing.Point(0, 0);
+            this.YohouKeihou_Hou_Final_Time.Margin = new System.Windows.Forms.Padding(0);
+            this.YohouKeihou_Hou_Final_Time.Name = "YohouKeihou_Hou_Final_Time";
+            this.YohouKeihou_Hou_Final_Time.Size = new System.Drawing.Size(0, 18);
+            this.YohouKeihou_Hou_Final_Time.TabIndex = 6;
             // 
             // Back
             // 
@@ -127,36 +120,22 @@
             this.Back.TabIndex = 50;
             this.Back.Text = "　　　　";
             this.Back.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Back.UseWaitCursor = true;
-            // 
-            // Final
-            // 
-            this.Final.AutoSize = true;
-            this.Final.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Final.Location = new System.Drawing.Point(189, 0);
-            this.Final.Margin = new System.Windows.Forms.Padding(0);
-            this.Final.Name = "Final";
-            this.Final.Size = new System.Drawing.Size(0, 18);
-            this.Final.TabIndex = 52;
-            this.Final.UseWaitCursor = true;
             // 
             // JsonTimer
             // 
             this.JsonTimer.Enabled = true;
             this.JsonTimer.Interval = 3000;
-            this.JsonTimer.Tick += new System.EventHandler(this.Timer);
+            this.JsonTimer.Tick += new System.EventHandler(this.EEW);
             // 
             // Version
             // 
             this.Version.AutoSize = true;
             this.Version.Font = new System.Drawing.Font("Roboto", 6F);
-            this.Version.Location = new System.Drawing.Point(228, 101);
+            this.Version.Location = new System.Drawing.Point(216, 101);
             this.Version.Name = "Version";
             this.Version.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Version.Size = new System.Drawing.Size(168, 13);
+            this.Version.Size = new System.Drawing.Size(0, 13);
             this.Version.TabIndex = 53;
-            this.Version.Text = "EEW_Viewer by Project-S Version:1.0";
-            this.Version.UseWaitCursor = true;
             // 
             // Tunami
             // 
@@ -167,7 +146,6 @@
             this.Tunami.Name = "Tunami";
             this.Tunami.Size = new System.Drawing.Size(0, 18);
             this.Tunami.TabIndex = 54;
-            this.Tunami.UseWaitCursor = true;
             // 
             // Warn
             // 
@@ -179,7 +157,6 @@
             this.Warn.Size = new System.Drawing.Size(0, 20);
             this.Warn.TabIndex = 55;
             this.Warn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Warn.UseWaitCursor = true;
             // 
             // Main
             // 
@@ -190,9 +167,8 @@
             this.Controls.Add(this.Warn);
             this.Controls.Add(this.Loading);
             this.Controls.Add(this.SAIDAISINDO);
-            this.Controls.Add(this.Final);
             this.Controls.Add(this.Singen);
-            this.Controls.Add(this.YohouKeihou_Hou_Time);
+            this.Controls.Add(this.YohouKeihou_Hou_Final_Time);
             this.Controls.Add(this.sindo);
             this.Controls.Add(this.M_Depth);
             this.Controls.Add(this.Version);
@@ -203,7 +179,6 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EEW_Viewer";
-            this.UseWaitCursor = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,9 +190,8 @@
         private System.Windows.Forms.Label M_Depth;
         private System.Windows.Forms.Label Loading;
         private System.Windows.Forms.Label sindo;
-        private System.Windows.Forms.Label YohouKeihou_Hou_Time;
+        private System.Windows.Forms.Label YohouKeihou_Hou_Final_Time;
         private System.Windows.Forms.Label Back;
-        private System.Windows.Forms.Label Final;
         private System.Windows.Forms.Timer JsonTimer;
         private System.Windows.Forms.Label Version;
         private System.Windows.Forms.Label Tunami;
