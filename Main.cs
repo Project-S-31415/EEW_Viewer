@@ -10,7 +10,7 @@ namespace EEW_Viewer
         public Main()
         {
             InitializeComponent();
-            Version.Text = "EEW_Viewer by Project - S Version: 2.1　";//β
+            Version.Text = "EEW_Viewer by Project-S Version: 2.2β　";//β
             JsonTimer.Start();
         }
         public void EEW(object sender, EventArgs e)
@@ -67,36 +67,22 @@ namespace EEW_Viewer
                     int ITCG2 = 0;
                     int ITCB2 = 0;
 
+                    SAIDAISINDO.Text = $"";
+                    sindo.Text = $"";
+                    Singen.Text = $"";
+                    M_Depth.Text = $"";
+                    YohouKeihou_Hou_Final_Time.Text = $"";
+                    Tunami.Text = $"";
 
                     string DataTime = _DataTime;
-                    bool PLUM = false;
                     bool Tsunami_Warn = false;
                     bool Warning = false;
                     bool Data = false;
                     bool Final = false;
+                    bool PLUM = false;
 
 
-                    //Mによる判定(津波、PLUM)未実装
-                    //double M = Convert.ToDouble(_M);
 
-                    /*
-                    if (M <= 1.0)
-                    {
-                        PLUM = true;
-                    }
-                    else
-                    {
-                        PLUM = false;
-                    }
-                    if (M >= 6.5)
-                    {
-                        Tsunami_Warn = true;
-                    }
-                    else
-                    {
-                        Tsunami_Warn = false;
-                    }
-                    */
                     //震度別背景色未実装
                     if (jsonData.Calcintensity == "不明")
                     {
@@ -208,6 +194,18 @@ namespace EEW_Viewer
                         sindo.Text = $"{_Shindo}";
                         Singen.Text = $"{_Shingen}";
                         M_Depth.Text = $"M{_M}    {_Depth}";
+
+                        double M = Convert.ToDouble(_M);
+
+                        if (M >= 6.5)
+                        {
+                            Tunami.Text = $"津波発生の\n可能性あり";
+                        }
+                        if (M <= 1.1)
+                        {
+                            M_Depth.Text = $"PLUM法による予測";
+                        }
+
                         if (jsonData.Is_final == "true")
                         {
                             YohouKeihou_Hou_Final_Time.Text = $"緊急地震速報 {_Alert}  第{_Num}報  最終   {DataTime}　　　";
@@ -226,6 +224,14 @@ namespace EEW_Viewer
                         sindo.Text = $"{_Shindo}";
                         Singen.Text = $"{_Shingen}";
                         M_Depth.Text = $"M{_M}    {_Depth}";
+
+                        double M = Convert.ToDouble(_M);
+                        if (M >= 6.5)
+                        {
+                            Tunami.Text = $"津波発生の\n可能性あり";
+                        }
+                        
+
                         if (Final = true)
                         {
                             YohouKeihou_Hou_Final_Time.Text = $"緊急地震速報 {_Alert}  第{_Num}報  最終   {DataTime}　　　";
@@ -252,6 +258,8 @@ namespace EEW_Viewer
                         YohouKeihou_Hou_Final_Time.Text = $"緊急地震速報は受信していません";
                     }
 
+
+
                     var InfoBackgroundColor1 = System.Drawing.Color.FromArgb(IBCR1, IBCG1, IBCB1);
                     var InfoTextColor1 = System.Drawing.Color.FromArgb(ITCR1, ITCG1, ITCB1);
                     var InfoBackgroundColor2 = System.Drawing.Color.FromArgb(IBCR2, IBCG2, IBCB2);
@@ -273,6 +281,12 @@ namespace EEW_Viewer
                     Tunami.ForeColor = InfoTextColor2;
                     Warn.ForeColor = InfoTextColor2;
 
+                    Time1 = null;
+                    Time2 = 0;
+                    Time3 = 0;
+                    AccessTime = null;
+
+
                     _Data = null;
                     _Alert = null;
                     _Shingen = null;
@@ -287,11 +301,10 @@ namespace EEW_Viewer
 
 
                     DataTime = null;
-                    PLUM = false;
-                    Tsunami_Warn = false;
-                    Warning = false;
-                    Data = false;
                     Final = false;
+                   
+
+
 
                 }
             }
@@ -305,7 +318,6 @@ namespace EEW_Viewer
 
         public class EEW_JSON
         {
-            //nullになるとエラーになるのですべてstring
             //メッセージ
             public string Message { get; set; }
             //更新時刻
@@ -332,7 +344,6 @@ namespace EEW_Viewer
             public string Is_training { get; set; }
             //発生時刻
             public string Origin_time { get; set; }
-
 
         }
     }
