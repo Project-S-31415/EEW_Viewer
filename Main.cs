@@ -10,7 +10,7 @@ namespace EEW_Viewer
         public Main()
         {
             InitializeComponent();
-            Version.Text = "EEW_Viewer by Project-S Version: 2.2β　";//β
+            Version.Text = "EEW_Viewer by Project-S Version: 2.2　";//β
             JsonTimer.Start();
         }
         public void EEW(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace EEW_Viewer
                     //取得URL設定
                     string Time1 = DateTime.Now.ToString("yyyyMMddhhmmss");
                     long Time2 = Convert.ToInt64(Time1);
-                    long Time3 = Time2 - 2;
+                    long Time3 = Time2 - 1;
                     string AccessTime = "http://www.kmoni.bosai.go.jp/webservice/hypo/eew/" + Time3 + ".json".ToString() + ".json";
                     wc.Encoding = Encoding.UTF8;
                     //通常
